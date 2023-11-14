@@ -27,6 +27,19 @@
 }
 
 /* hero section CSS */
+.hero-name{
+    font-size: 100px;
+    color: #c7c5c5;
+}
+@media only screen and (max-width:600px){
+    .hero-name{
+        font-size: 70px;
+        color: #c7c5c5;
+    }
+}
+
+
+
 #hero-section{
     /* background-color: black; */
     background:url("../img/main.jpg");
