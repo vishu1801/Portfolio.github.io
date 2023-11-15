@@ -65,4 +65,21 @@ $('.portfolio-card').hover(function(){
     $(this).find("div").addClass('animate__zoomIn');
 },function () {
     $(this).find("div").removeClass('animate__zoomIn');
-})
+});
+
+
+
+
+function categorise_according_to_selection(category){
+    var items = document.querySelectorAll('.portfolio-item');
+
+    items.forEach(function(item) {
+      if (category === 'all' || item.classList.contains(category)) {
+        item.classList.add('d-block');
+        item.classList.remove('d-none');
+      } else {
+        item.classList.remove('d-block');
+        item.classList.add('d-none');
+      }
+    });
+}
