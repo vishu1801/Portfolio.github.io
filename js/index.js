@@ -1,15 +1,18 @@
+const screenWidth = $(window).width();
 $(document).ready(function(){
     let position = $(document).scrollTop();
-    if(position>625){
-        $('#navbar').addClass('fixed-top');
+    
+    if(position > 400){
+        $('#navbar').addClass('animate__fadeInDown');
+        $('#navbar').removeClass('d-none')
     }else{
-        $('#navbar').removeClass('fixed-top');
+        $('#navbar').addClass('d-none')
     }
 });
 
 $(window).scroll(function(){
     let position = $(document).scrollTop();
-    console.log(position);
+    // console.log(position);
     if(position > 100 && position < 700){
         $('#about_animate_left').addClass('animate__animated animate__fadeInLeft')
         $('#about_animate_right').addClass('animate__animated animate__fadeInRight')
@@ -20,37 +23,40 @@ $(window).scroll(function(){
     }
 });
 
-$(window).scroll(function(){
-    let position = $(document).scrollTop();
-    if(position>625){
-        $('#navbar').addClass('fixed-top');
-    }else{
-        $('#navbar').removeClass('fixed-top');
-    }
-});
+
 
 
 $('a.nav-link').on('click', function(event) {
     if (this.hash !== "") {
         event.preventDefault();
         var hash = this.hash;
-
         if(hash === "#about"){
-            $('html, body').scrollTop(615);
+            $('html, body').scrollTop($('#about').offset().top);
         }
         if(hash === "#my-resume"){
-            $('html, body').scrollTop(3050);
+            $('html, body').scrollTop($('#my-resume').offset().top);
         }
         if(hash === "#certification"){
-            $('html, body').scrollTop(1360);
+            $('html, body').scrollTop($('#certification').offset().top);
         }
         if(hash === "#portfolio"){
-            $('html, body').scrollTop(4000);
+            $('html, body').scrollTop($('#portfolio').offset().top);
         }
         if(hash === '#contact'){
-            $('html, body').scrollTop(4900);
+            $('html, body').scrollTop($('#contact').offset().top);
         }
         
+    }
+});
+$(window).scroll(function(){
+    let position = $(document).scrollTop();
+    if(position > 400){
+        $('#navbar').removeClass('d-none')
+        $('#navbar').addClass('animate__fadeInDown');
+        $('#navbar').removeClass('animate__fadeOutUp');
+    }else{
+        $('#navbar').removeClass('animate__fadeInDown');
+        $('#navbar').addClass('animate__fadeOutUp');
     }
 });
 

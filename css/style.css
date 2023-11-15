@@ -58,7 +58,7 @@
 
 
 /* Certification section */
-#certification > .container >.card:hover{
+#certification > .container >.row>.card:hover{
     box-shadow: 10px 10px 10px 20px rgba(0,0,0,0.08);
     transition: box-shadow 0.2s ease-in-out;
 }
